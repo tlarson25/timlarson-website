@@ -1,0 +1,51 @@
+:root {
+    --text-color: #dae2e7;
+    --link-color: #3395c7;
+    --background-color: #1A2747;
+}
+
+
+body {
+    background: var(--background-color);
+}
+
+.resume-text {
+    color: var(--text-color);
+    padding-top: 185px;
+    font-size: clamp(0.8rem, 1.5rem, 3rem);
+    margin: 0 100px;
+    text-align: center;
+}
+
+.resume-text a {
+    color: var(--link-color);
+    transition: 400ms ease-in-out;
+}
+
+.resume-text a:hover {
+    color: var(--hover-color);
+}
+
+.pdf-wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    height: auto;
+
+}
+
+.pdf-wrapper .link {
+    /* display: flex; */
+    /* justify-content: center; */
+    flex: 0 0 50%;
+    height: auto;
+    margin-bottom: 20px;
+    padding-top: 50px;
+}
+
+.pdf-wrapper .link img {
+    width: 100%;
+    height: auto;
+    /* min-width: 100%; */
+
+}
