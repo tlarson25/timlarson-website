@@ -169,6 +169,7 @@ a {
     .bottom-navbar .bottom-menu {
         font-size: 12pt;
         padding: 2px;
+        bottom: 0;
     }
 
 }
@@ -176,10 +177,12 @@ a {
 
 /* BOTTOM NAVBAH */
 .bottom-navbar {
+    /* position: absolute; */
     background: #111;
     padding: 10px;
     width: 100%;
-    /* position: relative; */
+    position: fixed;
+    -webkit-position: fixed;
     bottom: 0;
     display: flex;
     /* flex: 0 1 0; */
