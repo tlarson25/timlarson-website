@@ -29,7 +29,7 @@
     align-items: center;
     height: 120%;
 
-    min-height: 100vh;
+    min-height: auto;
 }
 
 h1 {
@@ -106,7 +106,7 @@ h1 {
 }
 
 .picture-container {
-    margin-top: 10px;
+    margin-top: 40px;
     height: auto;
 }
 
@@ -130,13 +130,15 @@ h1 {
 
 .about-container {
     color: var(--text-color);
-    padding: 50px;
-    padding-bottom: 50px;
+    /* padding: 50px; */
+    /* margin-bottom: 90px;q */
+    padding-bottom: 100px;
     background: #333;
-    height: auto;
+    min-height: auto;
 }
 
 .about-container h2 {
+    padding-top: 30px;;
     display: flex;
     font-size: 3rem;
     justify-content: center;
@@ -144,7 +146,9 @@ h1 {
 
 .about-container p {
     font-size: clamp(1.5rem, 2vw, 5rem);
-    margin: 50px 50px;
+    margin: 0px 50px;
+    padding-top: 30px;
+    height: auto;
 }
 
 .about-container a {
@@ -160,7 +164,7 @@ h1 {
     .picture-container {
         display: none;
     }
-    .about-container {
+    /* .about-container {
         padding: 10px;
-    }
+    } */
 }
