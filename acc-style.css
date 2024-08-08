@@ -1,0 +1,78 @@
+:root {
+
+    --background-color: #1A2747;
+    --text-color: #dae2e7;
+    --link-color: #3395c7;
+    --hover-color: #1CA350;
+}
+
+.page-container {
+    padding: 50px 0 50px 50px;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    /* overflow: auto; */
+    background: var(--background-color);
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    ;
+}
+
+.acc-container {
+    color: var(--text-color);
+
+}
+
+.project {
+
+    margin: 140px 10px -20px 10px;
+    display: flex;
+    padding: 30px 20px;
+    align-items: center;
+    justify-content: space-around;
+    border: 5px solid transparent;
+    transition: 500ms ease-in-out;
+    max-width: 90%;
+}
+
+.project:hover {
+    /* border: 5px solid green; */
+    box-shadow: 10px 10px 10px #121e3d inset, -10px -10px 1px 1px #253255 inset;
+}
+
+.acco-1 img {
+    /* margin-top: 13px; */
+    margin-left: 40px;
+    width: 30%;
+    height: auto;
+}
+
+
+
+
+/* .acco-1 {
+    display: flex;
+    padding: 40px 20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.acco-2 {
+    display: flex;
+    padding: 40px 20px;
+    align-items: center;
+    justify-content: space-around;
+} */
+.patent-img {
+    padding: 40px 90px 40px 20px;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 900px) {
+    .page-container .acc-container img {
+        display: none;
+    }
+}
