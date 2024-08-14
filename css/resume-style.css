@@ -50,9 +50,9 @@ body {
     /* min-width: 100%; */
 }
 
-@media screen and (max-width: 800px){
-.resume-text {
-    margin: 0 30px;
-    padding-top: 180px;
-}
+@media screen and (max-width: 800px) {
+    .resume-text {
+        margin: 0 30px;
+        padding-top: 180px;
+    }
 }

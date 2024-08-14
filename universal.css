@@ -21,10 +21,24 @@ body {
     font-family: "Fira-Sans", sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    background: var(--background-color);
     background-repeat: no-repeat;
     width: 100vw;
     height: auto;
+    animation: fadeIn .3s ease-in-out;
+    animation-fill-mode: forwards;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
 
 a {
     text-decoration: none;
@@ -36,7 +50,7 @@ a {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     display: flex;
 }
@@ -69,13 +83,12 @@ a {
 
 .navbar .logo img:hover {
     transform: scale(115%);
-    left: -100px;
 
 }
 
 .navbar .main-menu {
-    flex: 1 0 auto;
-    text-align: right;
+    /* flex: 1 0 auto; */
+    /* text-align: right; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -95,30 +108,17 @@ a {
     font-size: 26pt;
 }
 
-
-
-.mobile-menu ul {
-    list-style: none;
-    padding-left: 8px;
-    margin-top: 120px;
-    text-align: left;
-}
-
-.mobile-menu ul li {
-    padding: 15px;
-    font-size: 14pt;
-}
-
-
 .main-menu .hamburger-button {
     display: none;
-    z-index: 1000;
+    position: relative;
+    z-index: 100;
     cursor: pointer;
     border-radius: 4px;
+    background-color: var(--link-color);
     border-style: none;
     padding: 10px;
     /* left: 0; */
-    
+
 }
 
 .hamburger-button .hamburger-line {
@@ -131,19 +131,37 @@ a {
 }
 
 .mobile-menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: -300px;
-    width: 200px;
+    width: 180px;
     height: 100%;
-    z-index: 30;
-    background: #222;
-    transition: right 0.3s ease-in-out;
+    /* z-index: 99; */
+    transition: right 0.5s ease-in-out;
+
 }
 
 .mobile-menu.active {
     right: 0px;
     background-color: #222;
+    /* z-index: 99; */
+
+}
+
+
+.mobile-menu ul {
+    color: var(--text-color);
+    list-style: none;
+    padding-left: 8px;
+    margin-top: 120px;
+    text-align: left;
+    background-color: var(--hover-color);
+    border-radius: 10px;
+}
+
+.mobile-menu ul li {
+    padding: 15px;
+    font-size: 14pt;
 }
 
 
@@ -151,13 +169,14 @@ a {
     .navbar {
         height: 15%;
     }
-    
+
     .navbar .main-menu .links {
         display: none;
     }
 
     .main-menu .hamburger-button {
         display: block;
+        z-index: 11;
 
     }
 
@@ -213,6 +232,7 @@ a {
     /* padding: 0 10px; */
     /* justify-content: center; */
 }
+
 .bottom-navbar .bottom-img {
     display: flex;
     justify-content: flex-end;

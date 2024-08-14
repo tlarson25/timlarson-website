@@ -9,6 +9,7 @@
 .page-container {
     padding: 50px 0 50px 50px;
     min-height: 100%;
+    height: auto;
     width: 100%;
     /* overflow: auto; */
     background: var(--background-color);
@@ -73,12 +74,5 @@
 @media screen and (max-width: 900px) {
     .page-container .acc-container img {
         display: none;
-    }
-    .acco-1{
-        margin-bottom: -100px;
-    }
-
-    .acco-1{
-        margin-top: 100px;
     }
 }

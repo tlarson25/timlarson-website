@@ -19,6 +19,8 @@
 
 .main-page {
     display: flex;
+    padding: 100px;
+    width: 100vw;
     justify-content: space-around;
     background: var(--background-color);
     align-items: center;
@@ -27,39 +29,86 @@
 .page-container {
     padding: 150px 30px;
     align-items: center;
-    height: 120%;
+    min-height: 120%;
 
     min-height: auto;
 }
 
 h1 {
+    overflow: hidden;
     width: 100%;
-    margin: 10px 10px;
-    padding: 15px;
+    text-wrap: nowrap;
     font-size: clamp(3.5rem, 7vw, 5rem);
     font-weight: 600;
-    justify-items: center;
+    justify-items: left;
     color: var(--text-color);
-    text-shadow: -5px 5px 2px #333;
+}
+
+.hi {
+    animation: wipe-in 1s ease-in-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.imtim {
+    animation: wipe-in 1s ease-in-out .8s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.thisismy {
+    animation: wipe-in 1s ease-in-out 1.9s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+
+@keyframes wipe-in {
+    from {
+        opacity: 10%;
+        visibility: hidden;
+        width: 0%;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 100%;
+        visibility: visible;
+        width: 100%;
+        transform: translateX(0px);
+    }
 
 }
 
 .scroll-container {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    height: 6rem;
+    overflow: hidden;
+
+}
+
+.scrolling-text {
+    animation: wipe-in 1s ease-in-out 2s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
     padding-top: 10px;
     display: inline-flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    height: 1em;
+    /* height: 1e; */
+    /* line-height: 1rem; */
     margin-top: 10px;
+    line-height: 1;
+    font-weight: 600;
+
 }
 
 .item {
-
+    font-size: 5rem;
     animation: auto-scroll 7s infinite;
-    -webkit-animation: auto-scroll 5.5s infinite;
     /* animation: fade-in-out 1s; */
-    animation-delay: 1s;
+    animation-delay: 4s;
 }
 
 .color1 {
@@ -74,11 +123,7 @@ h1 {
     color: var(--color-3);
 }
 
-.scrolling-text {
-    line-height: 1;
 
-
-}
 
 @keyframes auto-scroll {
     0% {
@@ -105,17 +150,35 @@ h1 {
     }
 }
 
+@keyframes fade-in-pic {
+    from {
+        /* visibility: hidden; */
+        opacity: 0%;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 100%;
+    }
+}
+
 .picture-container {
     margin-top: 40px;
-    height: auto;
+    /* height: auto; */
 }
 
 .picture img {
-
-    width: 463px;
-    height: 463px;
+    animation: fade-in-pic 1s ease-in-out 2.2s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    /* width: 463px;
+    height: 463px; */
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    /* border: 20px solid var(--color-1); */
+
+    /* GRADIENT BORDER */
     border: double 20px transparent;
     border-radius: 60%;
     background-image: linear-gradient(#1A2747, #1A2747), linear-gradient(135deg, var(--color-1), #0d5729);
@@ -128,20 +191,40 @@ h1 {
 
 /* About */
 
+@keyframes fade-in-scroll {
+    to {
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+}
+
+
 .about-container {
     color: var(--text-color);
-    /* padding: 50px; */
-    /* margin-bottom: 90px;q */
-    padding-bottom: 100px;
+    scroll-margin: 135px;
+    padding: 20px;
     background: #333;
     min-height: auto;
+
+
+}
+
+@keyframes fade-in-about {
+    to {
+        opacity: 100%;
+    }
 }
 
 .about-container h2 {
-    padding-top: 30px;;
+    opacity: 0;
+    padding-top: 30px;
     display: flex;
     font-size: 3rem;
     justify-content: center;
+    animation: fade-in-about linear forwards;
+    animation-timeline: view(30%);
+    animation-timeline: view();
+
 }
 
 .about-container p {
@@ -149,6 +232,10 @@ h1 {
     margin: 0px 50px;
     padding-top: 30px;
     height: auto;
+    animation: fade-in-about linear forwards;
+    animation-timeline: view(30%);
+    opacity: 0%;
+    animation-range: entry;
 }
 
 .about-container a {
@@ -164,6 +251,7 @@ h1 {
     .picture-container {
         display: none;
     }
+
     /* .about-container {
         padding: 10px;
     } */
